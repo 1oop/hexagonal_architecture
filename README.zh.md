@@ -8,16 +8,16 @@
 
 项目结构在 `crates/` 目录下划分为多个独立的 Crate，以强制执行严格的架构边界：
 
-- **`crates/{{project-name}}-domain` (领域层)**: 
+- **`crates/domain` (领域层)**: 
   - **核心**: 包含纯业务逻辑、领域实体和定义的错误类型。
   - **依赖**: 无。完全隔离了框架和外部库。
-- **`crates/{{project-name}}-application` (应用层)**: 
+- **`crates/application` (应用层)**: 
   - **编排**: 定义与外部通信的“端口”（Traits）以及协调领域逻辑的“服务”（用例）。
   - **依赖**: `domain`。
-- **`crates/{{project-name}}-infrastructure` (基础设施层)**: 
+- **`crates/infrastructure` (基础设施层)**: 
   - **适配器 (出站)**: 实现应用层定义的端口（例如通过 SQLx 实现的数据库仓库、Redis 客户端、外部 HTTP 客户端）。
   - **依赖**: `domain`, `application`。
-- **`crates/{{project-name}}-api` (接口/入口层)**: 
+- **`crates/api` (接口/入口层)**: 
   - **适配器 (入站)**: 应用程序的入口。处理交付逻辑（Axum REST API、CLI、任务运行器）以及**依赖注入**（将适配器注入到服务中）。
   - **依赖**: `domain`, `application`, `infrastructure`。
 
@@ -41,7 +41,7 @@ cargo generate --path /path/to/template --name my-awesome-project
 
 ### 2. 运行 API 服务
 ```bash
-cargo run -p {{project-name}}-api
+cargo run -p api
 ```
 
 ### 3. 正式环境编译

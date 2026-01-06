@@ -1,5 +1,5 @@
 [package]
-name = "{{project-name}}-domain"
+name = "domain"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true

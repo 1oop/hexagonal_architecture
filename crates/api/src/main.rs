@@ -3,8 +3,8 @@ use axum::{
     routing::{get, post},
     Json, Router,
 };
-use {{project-name}}-application::UserService;
-use {{project-name}}-infrastructure::InMemoryUserRepository;
+use application::UserService;
+use infrastructure::InMemoryUserRepository;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 

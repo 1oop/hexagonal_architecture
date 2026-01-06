@@ -1,6 +1,6 @@
 use async_trait::async_trait;
-use {{project-name}}-application::UserRepository;
-use {{project-name}}-domain::User;
+use application::UserRepository;
+use domain::User;
 use std::collections::HashMap;
 use std::sync::Mutex;
 use uuid::Uuid;

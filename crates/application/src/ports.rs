@@ -1,5 +1,5 @@
 use async_trait::async_trait;
-use {{project-name}}-domain::User;
+use domain::User;
 use uuid::Uuid;
 
 #[async_trait]

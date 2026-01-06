@@ -1,9 +1,9 @@
 [workspace]
 members = [
-    "crates/{{project-name}}-domain",
-    "crates/{{project-name}}-application",
-    "crates/{{project-name}}-infrastructure",
-    "crates/{{project-name}}-api",
+    "crates/domain",
+    "crates/application",
+    "crates/infrastructure",
+    "crates/api",
 ]
 resolver = "2"
 
@@ -24,5 +24,5 @@ tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 uuid = { version = "1.0", features = ["v4", "serde"] }
 async-trait = "0.1"
-axum = "0.7"
-sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres", "uuid", "chrono"] }
+axum = "0.8"
+sqlx = { version = "0.8", features = ["runtime-tokio-rustls", "postgres", "uuid", "chrono"] }

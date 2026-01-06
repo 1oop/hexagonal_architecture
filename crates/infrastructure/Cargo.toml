@@ -1,16 +1,17 @@
 [package]
-name = "{{project-name}}-infrastructure"
+name = "infrastructure"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
 
 [dependencies]
-{{project-name}}-domain = { path = "../{{project-name}}-domain" }
-{{project-name}}-application = { path = "../{{project-name}}-application" }
+domain = { path = "../domain" }
+application = { path = "../application" }
 serde = { workspace = true }
 async-trait = { workspace = true }
 anyhow = { workspace = true }
 sqlx = { workspace = true, optional = true }
+uuid = { workspace = true }
 
 [features]
 default = ["postgres"]

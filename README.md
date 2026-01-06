@@ -8,16 +8,16 @@ Built with **Hexagonal Architecture** (Ports and Adapters) in Rust, using **Edit
 
 This project is organized into several crates within the `crates/` directory to enforce strict architectural boundaries:
 
-- **`crates/{{project-name}}-domain`**: 
+- **`crates/domain`**: 
   - **Core**: Contains pure business logic, entities, and domain errors.
   - **Dependencies**: None. It is completely isolated from frameworks and external libraries.
-- **`crates/{{project-name}}-application`**: 
+- **`crates/application`**: 
   - **Orchestration**: Defines "Ports" (traits) for external communication and "Services" (use cases) to coordinate domain logic.
   - **Dependencies**: `domain`.
-- **`crates/{{project-name}}-infrastructure`**: 
+- **`crates/infrastructure`**: 
   - **Adapters (Outbound)**: Implements the ports defined in the application layer (e.g., Database repositories via SQLx, Redis clients, external HTTP clients).
   - **Dependencies**: `domain`, `application`.
-- **`crates/{{project-name}}-api`**: 
+- **`crates/api`**: 
   - **Adapters (Inbound)**: The entry point of the app. Handles delivery logic (Axum REST API, CLI, Task Runners) and **Dependency Injection** (wiring adapters to services).
   - **Dependencies**: `domain`, `application`, `infrastructure`.
 
@@ -41,7 +41,7 @@ cargo generate --path /path/to/template --name my-awesome-project
 
 ### 2. Run the API
 ```bash
-cargo run -p {{project-name}}-api
+cargo run -p api
 ```
 
 ### 3. Build for Production
