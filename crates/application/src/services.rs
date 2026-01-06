@@ -1,5 +1,5 @@
-use crate::ports::UserRepository;
 use domain::User;
+use domain::UserRepository;
 use std::sync::Arc;
 
 pub struct UserService {

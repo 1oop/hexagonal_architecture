@@ -8,3 +8,5 @@ authors.workspace = true
 serde = { workspace = true }
 thiserror = { workspace = true }
 uuid = { workspace = true }
+async-trait = { workspace = true }
+anyhow = { workspace = true }
