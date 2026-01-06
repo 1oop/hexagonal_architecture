@@ -1,0 +1,12 @@
+[template]
+cargo_generate_version = ">=0.10.0"
+
+[placeholders.author]
+type = "string"
+prompt = "Who is the author?"
+default = "Author Name"
+
+[placeholders.description]
+type = "string"
+prompt = "Project description?"
+default = "A Rust project with Hexagonal Architecture"

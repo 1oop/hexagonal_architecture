@@ -1,0 +1,12 @@
+[package]
+name = "{{project-name}}-application"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[dependencies]
+{{project-name}}-domain = { path = "../{{project-name}}-domain" }
+serde = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+anyhow = { workspace = true }

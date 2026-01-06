@@ -1,0 +1,17 @@
+[package]
+name = "{{project-name}}-api"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[dependencies]
+{{project-name}}-domain = { path = "../{{project-name}}-domain" }
+{{project-name}}-application = { path = "../{{project-name}}-application" }
+{{project-name}}-infrastructure = { path = "../{{project-name}}-infrastructure" }
+tokio = { workspace = true }
+axum = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+anyhow = { workspace = true }
